@@ -1,55 +1,54 @@
 Android APK Decompilation & Analysis - TP SEC 2
 Author: Alaoui Belghiti Hanaa
 Class: SICS4
-Project Overview
-This project is part of a practical exercise (TP) aimed at demonstrating the process of decompiling an Android APK, analyzing its structure, modifying specific parts of the code, and re-signing the APK for testing. The TP focuses on key Android security concepts such as file analysis, reverse engineering, and APK modifications.
 
-For more detailed explanations and specific command examples, please refer to the provided TP document.
+Project Overview
+This project is part of a practical exercise (TP) focused on decompiling an Android APK, analyzing its structure, modifying parts of the code, and re-signing the APK. The main goal is to explore key Android security concepts such as file analysis, reverse engineering, and APK modifications.
+
+For detailed explanations and specific command examples, refer to the accompanying TP document.
 
 Table of Contents
 Exercise 1: APK Decompilation & Recompilation
 Exercise 2: Analyzing .odex and .oat Files
 Exercise 3: Modifying APK to Hide Sensitive Information
+Conclusion
 Exercise 1: APK Decompilation & Recompilation
 Description:
-In this exercise, I launched an Android application in Android Studio, located the app-debug.apk, and decompressed it using different tools (7-Zip and Apktool). After making some modifications, I recompiled and signed the APK before running it on an emulator.
+In this exercise, I worked on an Android app in Android Studio, located the app-debug.apk, and decompressed it using 7-Zip and Apktool. I made changes to the APK, recompiled, signed, and tested it on an emulator.
 
 Steps:
-
-Launching the app in Android Studio and finding the APK.
-Decompressing the APK with 7-Zip.
-Opening classes.dex in Jadx to compare it with the original code.
-Checking the contents of AndroidManifest.xml after decompression.
-Recompiling and signing the APK using Apktool and command-line signing tools.
-Deploying the newly signed APK to the emulator for testing.
-For more details on each step and commands used, please refer to the TP document.
+Launch the app in Android Studio and locate the APK.
+Decompress the APK using 7-Zip.
+Open classes.dex in Jadx to compare it with the original code.
+Check the AndroidManifest.xml file after decompression.
+Recompile and sign the APK using Apktool and command-line tools.
+Deploy the recompiled APK on the emulator.
+For more details and exact commands used, refer to the TP document.
 
 Exercise 2: Analyzing .odex and .oat Files
 Description:
-This exercise explores the analysis of Android's .odex and .oat files, which are important for understanding how Android applications are optimized and stored on devices.
+This exercise focuses on analyzing Android's .odex and .oat files, understanding how applications are optimized, and retrieving data for further analysis.
 
 Steps:
-
-Navigating the Android shell with adb shell and listing app packages.
-Locating and copying base.odex from the device to the local machine.
-Analyzing base.odex using objdump and comparing it with boot-ext.oat.
-Attempting to read the .odex file using baksmali and switching to readelf for successful analysis.
-Complete command explanations and issues encountered can be found in the TP document.
+Use adb shell to navigate the Android shell and list app packages.
+Locate and copy the base.odex file from the device to the computer.
+Analyze base.odex using objdump and compare it with the boot-ext.oat file.
+Use the baksmali tool to read the .odex file (issue encountered, switch to readelf for successful analysis).
+For full command details and issues encountered, check the TP document.
 
 Exercise 3: Modifying APK to Hide Sensitive Information
 Description:
-In this final exercise, I identified a security flaw where the password was exposed in the application logs. I modified the APK to hide the password and ensured the changes were correctly applied by testing the modified APK.
+In this exercise, I identified a security flaw where the password was exposed in the logcat output. I modified the APK to hide the password and ensured that the modified APK works correctly.
 
 Steps:
-
-Capturing logcat output that displayed the password.
-Decompressing app-release.apk and modifying MainActivity to hide the password.
-Recompiling the modified APK and signing it.
-Replacing the original APK with the modified version on the emulator.
-Verifying that the password was no longer visible in the logs.
-A detailed walkthrough of how the password was hidden and how the APK was modified is available in the TP document.
+Capture the logcat output displaying the password.
+Decompress the app-release.apk and modify the MainActivity code to hide the password.
+Recompile and sign the modified APK.
+Replace the original APK on the emulator with the modified version.
+Verify that the password is no longer visible in the logs.
+A more detailed explanation of the modifications and steps taken can be found in the TP document.
 
 Conclusion
-This project provided practical insights into the processes of APK decompilation, reverse engineering, and mobile application security. The exercises enhanced my understanding of Android's inner workings and how to mitigate security risks by modifying APKs.
+This project provided practical insights into APK decompilation, reverse engineering, and Android security. Through these exercises, I gained a deeper understanding of Android’s internal structure and how to mitigate potential security risks by modifying APKs.
 
-For further information and in-depth technical explanations, please refer to the TP document accompanying this README
+For further information and in-depth technical details, please refer to the accompanying TP document.
